@@ -6,7 +6,7 @@ public class MenuCursorFollower : MonoBehaviour
 {
     public float moveSpeed = 0.1f;
     private float yaw = -149.495f, pitch = 8.329f;
-
+    
     // Update is called once per frame
     void Update()
     {
