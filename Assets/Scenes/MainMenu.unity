@@ -430,7 +430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2622478541039535112, guid: 7a358b2ae3654e14692b66fa057d32a7, type: 3}
       propertyPath: m_Lightmapping
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2622478541039535112, guid: 7a358b2ae3654e14692b66fa057d32a7, type: 3}
       propertyPath: m_Shadows.m_Type
@@ -1854,6 +1854,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 871777216}
+--- !u!1 &924426806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4954405867376207978, guid: 7a358b2ae3654e14692b66fa057d32a7, type: 3}
+  m_PrefabInstance: {fileID: 99410505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &924426807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924426806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec763b264d1d8a43adc6576e75b4f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Amplitude: 1.5
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
