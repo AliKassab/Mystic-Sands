@@ -21,6 +21,11 @@ public class MazeRenderer : MonoBehaviour
     [SerializeField]
     private Transform wallPrefab = null;
 
+    private void Start()
+    {
+        buildNewMaze();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
