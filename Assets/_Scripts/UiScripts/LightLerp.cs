@@ -1,20 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WordsGenerator : MonoBehaviour
+public class LightLerp : MonoBehaviour
 {
 
-    MazeRenderer mazeRenderer;
+    Light l;
+    [SerializeField] float Amplitude = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        l = GetComponent<Light>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //mazeRenderer.Randomize = true;
+        l.intensity = MathF.Abs( Mathf.Sin(Time.time) * Amplitude);
     }
 }
