@@ -15,7 +15,7 @@ public class LightLerp : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         l.intensity = MathF.Abs( Mathf.Sin(Time.time) * Amplitude);
     }

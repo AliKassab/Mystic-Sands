@@ -875,8 +875,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioMixer: {fileID: 24100000, guid: f5feae4386688de4d8d775dabddb3a6f, type: 2}
-  dropdown: {fileID: 8447127012872060826}
-  canvas: {fileID: 2314661655324645656}
+  ResolutionDropDown: {fileID: 0}
+  canvas:
+  - {fileID: 0}
 --- !u!1 &2541378010076178877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,7 +1127,6 @@ GameObject:
   - component: {fileID: 6534468573106877191}
   - component: {fileID: 8357848394030933700}
   - component: {fileID: 432707950486894426}
-  - component: {fileID: 4283532535543862729}
   m_Layer: 5
   m_Name: InstructionCanvas
   m_TagString: Untagged
@@ -1217,19 +1217,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4283532535543862729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3969425898015950766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb1edcef4f8bbe44baa184202b67ed18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 3969425898015950766}
 --- !u!1 &4098116218982169433
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,7 +3062,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8fac55fff4ce5fa40a7b2efefc0e617a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 649e3d5936523e24aa1c8ebc7da59758, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3129,7 +3116,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4283532535543862729}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SM2, Assembly-CSharp
         m_MethodName: closeClick
         m_Mode: 1
@@ -3725,6 +3712,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4298328053553533529, guid: 0bfe575e58f354c4985b1d3b920f8c5f, type: 3}
+      propertyPath: settingsPanel
+      value: 
+      objectReference: {fileID: 2314661655324645656}
+    - target: {fileID: 4298328053553533529, guid: 0bfe575e58f354c4985b1d3b920f8c5f, type: 3}
+      propertyPath: instructionPanel
+      value: 
+      objectReference: {fileID: 3969425898015950766}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
