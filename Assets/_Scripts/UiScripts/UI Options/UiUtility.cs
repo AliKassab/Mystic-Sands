@@ -5,11 +5,12 @@ using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SettingsUtility : MonoBehaviour
+public class UiUtility : MonoBehaviour
 {
     [SerializeField] AudioMixer AudioMixer;
     [SerializeField] Dropdown ResolutionDropDown;
     [SerializeField] List<GameObject> canvas;
+    List<GameObject> canvasesToHide;
 
     Resolution[] resolutions;
 
@@ -17,7 +18,6 @@ public class SettingsUtility : MonoBehaviour
     {       
         FillResolutionDropDown();
     }
-
     public void SetVolume(float volume) => AudioMixer.SetFloat("Volume", volume);
     public void SetQuality(int quality) => QualitySettings.SetQualityLevel(quality);
     public void SetResolution(int resIndex)
@@ -47,5 +47,12 @@ public class SettingsUtility : MonoBehaviour
             options.Add(option);
         }
         ResolutionDropDown.AddOptions(options);
+    }
+
+    public void ToggleCanvases(object _parameter, bool toggleBoolean){
+
+        canvasesToHide = _parameter as List<GameObject>;
+        foreach (var item in canvasesToHide)
+            item.SetActive(toggleBoolean);
     }
 }
