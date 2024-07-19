@@ -28,9 +28,27 @@ public struct Neighbour
     public WallState SharedWall;
 }
 
-public static class MazeGenerator
+public class MazeGenerator
 {
-
+    #region Singleton
+    private static MazeGenerator _instance;
+    private static readonly object _lock = new object();
+    private MazeGenerator() { }
+    public static MazeGenerator Instance
+    {
+        get
+        {
+            lock (_lock)
+            {
+                if (_instance == null)
+                {
+                    _instance = new MazeGenerator();
+                }
+                return _instance;
+            }
+        }
+    }
+    #endregion
     private static WallState GetOppositeWall(WallState wall)
     {
         switch (wall)
@@ -81,73 +99,28 @@ public static class MazeGenerator
     {
         var list = new List<Neighbour>();
 
-        if (p.X > 0) // left
-        {
-            if (!maze[p.X - 1, p.Y].HasFlag(WallState.VISITED))
-            {
-                list.Add(new Neighbour
-                {
-                    Position = new Position
-                    {
-                        X = p.X - 1,
-                        Y = p.Y
-                    },
-                    SharedWall = WallState.LEFT
-                });
-            }
-        }
-
-        if (p.Y > 0) // DOWN
-        {
-            if (!maze[p.X, p.Y - 1].HasFlag(WallState.VISITED))
-            {
-                list.Add(new Neighbour
-                {
-                    Position = new Position
-                    {
-                        X = p.X,
-                        Y = p.Y - 1
-                    },
-                    SharedWall = WallState.DOWN
-                });
-            }
-        }
-
-        if (p.Y < height - 1) // UP
-        {
-            if (!maze[p.X, p.Y + 1].HasFlag(WallState.VISITED))
-            {
-                list.Add(new Neighbour
-                {
-                    Position = new Position
-                    {
-                        X = p.X,
-                        Y = p.Y + 1
-                    },
-                    SharedWall = WallState.UP
-                });
-            }
-        }
-
-        if (p.X < width - 1) // RIGHT
-        {
-            if (!maze[p.X + 1, p.Y].HasFlag(WallState.VISITED))
-            {
-                list.Add(new Neighbour
-                {
-                    Position = new Position
-                    {
-                        X = p.X + 1,
-                        Y = p.Y
-                    },
-                    SharedWall = WallState.RIGHT
-                });
-            }
-        }
+        CheckNeighbour(p, -1, 0, WallState.LEFT, maze, width, height, list);
+        CheckNeighbour(p, 0, -1, WallState.DOWN, maze, width, height, list);
+        CheckNeighbour(p, 0, 1, WallState.UP, maze, width, height, list);
+        CheckNeighbour(p, 1, 0, WallState.RIGHT, maze, width, height, list);
 
         return list;
     }
 
+    private static void CheckNeighbour(Position p, int xOffset, int yOffset, WallState wallState, WallState[,] maze, int width, int height, List<Neighbour> list)
+        {
+            int x = p.X + xOffset;
+            int y = p.Y + yOffset;
+            
+            if (x >= 0 && y >= 0 && x < width && y < height && !maze[x, y].HasFlag(WallState.VISITED))
+            {
+                list.Add(new Neighbour
+                {
+                    Position = new Position { X = x, Y = y },
+                    SharedWall = wallState
+                });
+            }
+        }
     public static WallState[,] Generate(int width, int height)
     {
         WallState[,] maze = new WallState[width, height];

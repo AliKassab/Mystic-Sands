@@ -47,57 +47,40 @@ public class MazeRenderer : MonoBehaviour
     }
 
     private void Draw(WallState[,] maze)
+{
+    for (int i = 0; i < width; ++i)
     {
-
-        for (int i = 0; i < width; ++i)
+        for (int j = 0; j < height; ++j)
         {
-            for (int j = 0; j < height; ++j)
-            {
-                if(i==0 && j==0)
-                { continue; }
-                if(i==width-1 && j==height-1)
-                { continue; }
-                var cell = maze[i, j];
-                var position = new Vector3(-width / 2 + i, 0, -height / 2 + j);
+            if(i==0 && j==0)
+                continue;
+            if(i==width-1 && j==height-1)
+                continue;
 
-                if (cell.HasFlag(WallState.UP))
-                {
-                    var topWall = Instantiate(wallPrefab, transform) as Transform;
-                    topWall.position = position + new Vector3(0, 0, size / 2);
-                    topWall.localScale = new Vector3(size, topWall.localScale.y, topWall.localScale.z);
-                }
+            var cell = maze[i, j];
+            var position = new Vector3(-width / 2 + i, 0, -height / 2 + j);
 
-                if (cell.HasFlag(WallState.LEFT))
-                {
-                    var leftWall = Instantiate(wallPrefab, transform) as Transform;
-                    leftWall.position = position + new Vector3(-size / 2, 0, 0);
-                    leftWall.localScale = new Vector3(size, leftWall.localScale.y, leftWall.localScale.z);
-                    leftWall.eulerAngles = new Vector3(0, 90, 0);
-                }
+            if (cell.HasFlag(WallState.UP))
+                InstantiateWall(position, Vector3.forward * size / 2, Vector3.one * size, Quaternion.identity);
 
-                if (i == width - 1)
-                {
-                    if (cell.HasFlag(WallState.RIGHT))
-                    {
-                        var rightWall = Instantiate(wallPrefab, transform) as Transform;
-                        rightWall.position = position + new Vector3(+size / 2, 0, 0);
-                        rightWall.localScale = new Vector3(size, rightWall.localScale.y, rightWall.localScale.z);
-                        rightWall.eulerAngles = new Vector3(0, 90, 0);
-                    }
-                }
+            if (cell.HasFlag(WallState.LEFT))
+                InstantiateWall(position, Vector3.left * size / 2, Vector3.one * size, Quaternion.Euler(0, 90, 0));
 
-                if (j == 0)
-                {
-                    if (cell.HasFlag(WallState.DOWN))
-                    {
-                        var bottomWall = Instantiate(wallPrefab, transform) as Transform;
-                        bottomWall.position = position + new Vector3(0, 0, -size / 2);
-                        bottomWall.localScale = new Vector3(size, bottomWall.localScale.y, bottomWall.localScale.z);
-                    }
-                }
-            }
+            if (i == width - 1 && cell.HasFlag(WallState.RIGHT))
+                InstantiateWall(position, Vector3.right * size / 2, Vector3.one * size, Quaternion.Euler(0, 90, 0));
 
+            if (j == 0 && cell.HasFlag(WallState.DOWN))
+                InstantiateWall(position, Vector3.back * size / 2, Vector3.one * size, Quaternion.identity);
         }
-
     }
+}
+
+    private void InstantiateWall(Vector3 position, Vector3 offset, Vector3 scale, Quaternion rotation)
+    {
+        var wall = Instantiate(wallPrefab, transform) as Transform;
+        wall.position = position + offset;
+        wall.localScale = scale;
+        wall.rotation = rotation;
+    }
+
 }
