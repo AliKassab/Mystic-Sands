@@ -5,18 +5,35 @@ using UnityEngine;
 
 public class LightLerp : MonoBehaviour
 {
+    Light jarLight;
+    [SerializeField] float intensityAmplitude = 1.5f;
+    [SerializeField] float delayTime = 3f; // Delay time in seconds
 
-    Light l;
-    [SerializeField] float Amplitude = 1.5f;
+    void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        l = GetComponent<Light>();
+        Invoke(nameof(StartLerp), delayTime);
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        l.intensity = MathF.Abs( Mathf.Sin(Time.time) * Amplitude);
+    void StartLerp()
+    {   
+        jarLight = GetComponent<Light>();
+        StartCoroutine(LerpIntensity());
     }
+
+    IEnumerator LerpIntensity()
+    {
+        while (true)
+        {
+            jarLight.intensity = MathF.Abs(Mathf.Sin(Time.time) * intensityAmplitude);
+            yield return null;
+        }
+    }
+
+
 }
