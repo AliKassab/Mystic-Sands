@@ -20,22 +20,15 @@ public class MazeRenderer : MonoBehaviour
 
     [SerializeField]
     private Transform wallPrefab = null;
+    [SerializeField]
+    private GameObject triggerPrefab = null;
 
-    private void Start()
-    {
-        buildNewMaze();
-    }
+    [HideInInspector]
+    public GameObject startTimerTrigger;
+    [HideInInspector]
+    public GameObject endGameTrigger;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            buildNewMaze();
-        }
-
-    }
-
-    private void buildNewMaze()
+    public void buildNewMaze()
     {
         var maze = MazeGenerator.Generate(width, height);
         var currentMaze = maze;
@@ -51,15 +44,24 @@ public class MazeRenderer : MonoBehaviour
     for (int i = 0; i < width; ++i)
     {
         for (int j = 0; j < height; ++j)
-        {
-            if(i==0 && j==0)
-                continue;
-            if(i==width-1 && j==height-1)
-                continue;
-
+        {   
             var cell = maze[i, j];
             var position = new Vector3(-width / 2 + i, 0, -height / 2 + j);
 
+            if(i==0 && j==0)
+            {
+                startTimerTrigger = Instantiate(triggerPrefab, position, Quaternion.identity);
+                startTimerTrigger.tag = nameof(startTimerTrigger);
+                continue;
+            }
+
+            if(i==width-1 && j==height-1)
+            {
+                endGameTrigger = Instantiate(triggerPrefab, position, Quaternion.identity);
+                endGameTrigger.tag = nameof(endGameTrigger);
+                continue;
+            }
+            
             if (cell.HasFlag(WallState.UP))
                 InstantiateWall(position, Vector3.forward * size / 2, Vector3.one * size, Quaternion.identity);
 

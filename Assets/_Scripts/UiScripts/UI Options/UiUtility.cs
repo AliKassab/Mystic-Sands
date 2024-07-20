@@ -34,7 +34,7 @@ public class UiUtility : MonoBehaviour
     }
     public void ReturnToMainMenu() => SceneManager.LoadScene(0);
     public void CloseClick(int index) => canvas[index].SetActive(false);
-    private void FillResolutionDropDown()
+    public void FillResolutionDropDown()
     {
         resolutions = Screen.resolutions;
         ResolutionDropDown.ClearOptions();
@@ -49,6 +49,9 @@ public class UiUtility : MonoBehaviour
         ResolutionDropDown.AddOptions(options);
     }
 
+    public void ToggleCanvas( bool toggleBoolean){
+        canvas[2].SetActive(toggleBoolean);
+    }
     public void ToggleCanvases(object _parameter, bool toggleBoolean){
 
         canvasesToHide = _parameter as List<GameObject>;

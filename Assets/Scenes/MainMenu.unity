@@ -352,7 +352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec763b264d1d8a43adc6576e75b4f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amplitude: 1.5
+  intensityAmplitude: 1.5
+  delayTime: 3
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +727,11 @@ Transform:
   - {fileID: 28462533}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2033519193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 340588909680114199, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
+  m_PrefabInstance: {fileID: 4436080416396740595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &338876389569732773
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1024,6 +1030,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4877047968394621658, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
+      propertyPath: canvases.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877047968394621658, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
+      propertyPath: canvases.Array.data[4]
+      value: 
+      objectReference: {fileID: 2033519193}
     - target: {fileID: 5076956099497412085, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
       propertyPath: m_Name
       value: Canvases

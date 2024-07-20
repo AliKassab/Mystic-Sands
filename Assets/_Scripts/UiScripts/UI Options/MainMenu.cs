@@ -20,7 +20,9 @@ public class MainMenu : MonoBehaviour
         
         pausePanel = new List<GameObject>();
         pausePanel.Add(canvases[3]);
-
+        GameObject tempCanvas = canvases[4];
+        //remove canvas from list then return it
+        canvases.Remove(canvases[4]);
         menuItems[0].SetCommand(new StartGameCommand(), canvases);
         menuItems[1].SetCommand(new InstructionsCommand(), canvases[1]);
         menuItems[2].SetCommand(new SettingsCommand(), canvases[2]);

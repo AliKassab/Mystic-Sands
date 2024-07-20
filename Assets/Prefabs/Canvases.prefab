@@ -289,6 +289,7 @@ MonoBehaviour:
   canvas:
   - {fileID: 3969425898015950766}
   - {fileID: 2314661655324645656}
+  - {fileID: 340588909680114199}
 --- !u!1 &732210536499420620
 GameObject:
   m_ObjectHideFlags: 0
@@ -4216,6 +4217,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4425114843345739897, guid: 0bfe575e58f354c4985b1d3b920f8c5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425114843345739897, guid: 0bfe575e58f354c4985b1d3b920f8c5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425114843345739897, guid: 0bfe575e58f354c4985b1d3b920f8c5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5235394690534692467}
+    - target: {fileID: 4425114843345739897, guid: 0bfe575e58f354c4985b1d3b920f8c5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425114843345739897, guid: 0bfe575e58f354c4985b1d3b920f8c5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425114843345739897, guid: 0bfe575e58f354c4985b1d3b920f8c5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UiUtility, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425114843345739897, guid: 0bfe575e58f354c4985b1d3b920f8c5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425114843345739897, guid: 0bfe575e58f354c4985b1d3b920f8c5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4505,13 +4538,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8677725485314477159, guid: 567810bb2c265e34a9628b9c94f05676, type: 3}
       propertyPath: m_Name
-      value: MiniMapCanvas
+      value: HudCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 567810bb2c265e34a9628b9c94f05676, type: 3}
+--- !u!1 &340588909680114199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8677725485314477159, guid: 567810bb2c265e34a9628b9c94f05676, type: 3}
+  m_PrefabInstance: {fileID: 8995793562095171184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1445920990636115435 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7550157162434540443, guid: 567810bb2c265e34a9628b9c94f05676, type: 3}

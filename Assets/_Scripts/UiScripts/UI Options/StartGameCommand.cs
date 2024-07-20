@@ -13,4 +13,5 @@ public class StartGameCommand : MonoBehaviour, ICommand
         SceneManager.LoadSceneAsync(1);
         settingsUtility.ToggleCanvases(_parameter, false);
     }
+    
 }
