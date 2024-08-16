@@ -11,5 +11,6 @@ public class HomeCommand : MonoBehaviour, ICommand
         settingsUtility = new UiUtility();
         SceneManager.LoadSceneAsync(0);
         settingsUtility.ToggleCanvases(_parameter, false);
+        Time.timeScale = 1.0f;
     }
 }

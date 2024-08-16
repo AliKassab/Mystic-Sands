@@ -14,6 +14,16 @@ public class MainMenu : MonoBehaviour
     bool isPaused = false;
     List<GameObject> pausePanel;
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     private void Start()
     {   
         settingsUtility = new UiUtility();
@@ -28,7 +38,8 @@ public class MainMenu : MonoBehaviour
         menuItems[2].SetCommand(new SettingsCommand(), canvases[2]);
         menuItems[3].SetCommand(new QuitCommand()); 
         menuItems[4].SetCommand(new QuitCommand());
-        menuItems[5].SetCommand(new ContinueCommand(), canvases[3]); 
+        menuItems[5].SetCommand(new ContinueCommand(), canvases[3]);
+        canvases.Add(canvases[4]);
         menuItems[6].SetCommand(new HomeCommand(), canvases); 
     }
 
@@ -41,5 +52,10 @@ public class MainMenu : MonoBehaviour
             isPaused = !isPaused;
         }
     }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) { 
+        if (scene.buildIndex == 1)
+            settingsUtility.ToggleCanvases(canvases, false); 
+    } 
 
 }

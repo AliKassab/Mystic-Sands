@@ -23,9 +23,9 @@ public class MazeRenderer : MonoBehaviour
     [SerializeField]
     private GameObject triggerPrefab = null;
 
-    [HideInInspector]
+    [SerializeField]
     public GameObject startTimerTrigger;
-    [HideInInspector]
+    [SerializeField]
     public GameObject endGameTrigger;
 
     public void buildNewMaze()
