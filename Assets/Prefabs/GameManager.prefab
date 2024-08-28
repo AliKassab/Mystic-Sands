@@ -46,9 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6bf648eb6f8d8498ab8423cf598d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 60
   _mazeRenderer: {fileID: 0}
-  timer: 10
   TimerText: {fileID: 0}
+  EndGameText: {fileID: 0}
 --- !u!114 &7970316539366719277
 MonoBehaviour:
   m_ObjectHideFlags: 0
