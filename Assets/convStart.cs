@@ -12,11 +12,14 @@ public class convStart : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            
+            if (Input.GetKeyDown(KeyCode.E)){
                 Console.WriteLine("EEEEEEEEE");
                 print("E pressed");
                 ConversationManager.Instance.StartConversation(myConversation);
+            }
            
         }
     }
+
+    
 }
