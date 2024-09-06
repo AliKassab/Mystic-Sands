@@ -7,18 +7,19 @@ using UnityEngine.UI;
 
 public class UiUtility : MonoBehaviour
 {
-    [SerializeField] AudioMixer AudioMixer;
+    public AudioMixer AudioMixer;
     [SerializeField] Dropdown ResolutionDropDown;
     [SerializeField] List<GameObject> canvas;
     List<GameObject> canvasesToHide;
-
+    float volume;
     Resolution[] resolutions;
 
     private void Start()
-    {       
+    {
+        Screen.SetResolution(1920, 1080, Screen.fullScreen);    
         FillResolutionDropDown();
     }
-    public void SetVolume(float volume) => AudioMixer.SetFloat("Volume", volume);
+    public void SetVolume(float volume) => AudioMixer.SetFloat("MyExposedParam", volume);
     public void SetQuality(int quality) => QualitySettings.SetQualityLevel(quality);
     public void SetResolution(int resIndex)
     {
@@ -43,7 +44,7 @@ public class UiUtility : MonoBehaviour
 
         for (int i = 0; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width + "x" + resolutions[i].height;
+            string option = resolutions[i].width + " x " + resolutions[i].height + " @ " + resolutions[i].refreshRateRatio + "Hz";
             options.Add(option);
         }
         ResolutionDropDown.AddOptions(options);
