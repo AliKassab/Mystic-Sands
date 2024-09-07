@@ -944,8 +944,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c73bced97af8044dbc91a93373139fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 20
-  height: 20
+  width: 10
+  height: 10
   size: 1
   wallPrefab: {fileID: 8663457373138785179, guid: c38a333ffcc805c47a4e9ab3cdf057be, type: 3}
   triggerPrefab: {fileID: 8334028980043692896, guid: 97521290ba54b0a4ebea1ee8db48b71e, type: 3}

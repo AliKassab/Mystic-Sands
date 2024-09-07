@@ -5,6 +5,13 @@ using UnityEngine;
 public class MazeRenderer : MonoBehaviour
 {
 
+
+
+    private void Start()
+    {
+        buildNewMaze();
+    }
+
     //public bool Randomize = false;
 
     [SerializeField]
@@ -28,6 +35,12 @@ public class MazeRenderer : MonoBehaviour
     [SerializeField]
     public GameObject endGameTrigger;
 
+    [SerializeField]
+    private Transform doorPrefab = null;
+
+   
+
+
     public void buildNewMaze()
     {
         var maze = MazeGenerator.Generate(width, height);
@@ -41,14 +54,25 @@ public class MazeRenderer : MonoBehaviour
 
     private void Draw(WallState[,] maze)
 {
-    for (int i = 0; i < width; ++i)
+
+        int doorCount = 3; // Example: place 3 doors
+        int step = MazeGenerator.solutionPath.Count / (doorCount + 1); 
+
+
+        for (int i = 0; i < width; ++i)
     {
         for (int j = 0; j < height; ++j)
         {   
             var cell = maze[i, j];
             var position = new Vector3(-width / 2 + i, 0, -height / 2 + j);
 
-            if(i==0 && j==0)
+            if (MazeGenerator.solutionPath.Contains(new Position { X = i, Y = j }) && MazeGenerator.solutionPath.IndexOf(new Position { X = i, Y = j }) % step == 0)
+            {
+                Instantiate(doorPrefab, position, Quaternion.identity);
+                continue;
+            }
+
+                if (i==0 && j==0)
             {
                 startTimerTrigger = Instantiate(triggerPrefab, position, Quaternion.identity);
                 startTimerTrigger.tag = nameof(startTimerTrigger);
