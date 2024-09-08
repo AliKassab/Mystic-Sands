@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 4752529452936501850}
   - component: {fileID: 8915940290765056352}
   - component: {fileID: 5742285474892414929}
+  - component: {fileID: 6048982899217564103}
   m_Layer: 0
   m_Name: Plane052
   m_TagString: Untagged
@@ -166,6 +167,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6048982899217564103
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125841484555605780}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.027257022, y: 0.710158, z: 0.4710557}
+  m_Center: {x: -0.00028777868, y: -0.00003054742, z: -0.000001721131}
 --- !u!1 &373134232595988494
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +199,7 @@ GameObject:
   - component: {fileID: 5720836682968295544}
   - component: {fileID: 5332304649196614637}
   - component: {fileID: 5583038829180836675}
+  - component: {fileID: 2730484101012353956}
   m_Layer: 0
   m_Name: Plane025
   m_TagString: Untagged
@@ -249,6 +272,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2730484101012353956
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373134232595988494}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0904086, y: 0.0272571, z: 0.4710557}
+  m_Center: {x: 0.00000005957398, y: -0.00025725746, z: -0.0000039786105}
 --- !u!1 &632864413966844158
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,6 +855,7 @@ GameObject:
   - component: {fileID: 6880766810453418526}
   - component: {fileID: 7820493274664252622}
   - component: {fileID: 6944331143225420070}
+  - component: {fileID: 5345177539515221012}
   m_Layer: 0
   m_Name: Plane051
   m_TagString: Untagged
@@ -883,6 +928,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5345177539515221012
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2679880846474469026}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.027256764, y: 0.7231382, z: 0.47105548}
+  m_Center: {x: 0.00025726206, y: 0.000030562307, z: -0.000002935482}
 --- !u!1 &2938207001697339696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,6 +1873,7 @@ GameObject:
   - component: {fileID: 7896336498761949575}
   - component: {fileID: 5343546667981374705}
   - component: {fileID: 6877761034763256072}
+  - component: {fileID: 5245678490267629837}
   m_Layer: 0
   m_Name: Plane037
   m_TagString: Untagged
@@ -1879,3 +1946,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5245678490267629837
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8067310052017740279}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0904084, y: 0.027257092, z: 0.47105575}
+  m_Center: {x: -0.00000005956248, y: 0.0002572621, z: -0.0000015646592}
