@@ -796,13 +796,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3810674855135939240}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0192, y: 0.9044, z: 0.0367}
-  m_LocalScale: {x: 0.018686187, y: 0.018686187, z: 0.018686187}
+  m_LocalRotation: {x: -0.063711576, y: -0.052087296, z: 0.023834817, w: 0.99632305}
+  m_LocalPosition: {x: 0.016545191, y: -0.06657241, z: 0.02073503}
+  m_LocalScale: {x: 0.018686187, y: 0.018686188, z: 0.018686187}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8355158217596159022}
-  m_Father: {fileID: 6483658254058126920}
+  m_Father: {fileID: 7992240340837036345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &761499384877058327
 MeshFilter:
@@ -1236,6 +1236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6483658254058126920}
   - component: {fileID: 2964091321166439433}
+  - component: {fileID: -8154909805291104994}
   m_Layer: 0
   m_Name: WomanBlackAbaya (2)
   m_TagString: Untagged
@@ -1259,8 +1260,6 @@ Transform:
   - {fileID: 6820523347078310889}
   - {fileID: 453631306722827959}
   - {fileID: 5191363697480528637}
-  - {fileID: 3915359173704675204}
-  - {fileID: 6241253760156492882}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2964091321166439433
@@ -1284,6 +1283,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8154909805291104994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5367370518400941466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f9727bade570443a5ca34e7626f82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationStates: []
+  minSpeed: 0.8
+  maxSpeed: 1.2
 --- !u!1 &5545356562292980386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,7 +1487,9 @@ Transform:
   m_LocalPosition: {x: -0, y: 0.1132383, z: 0.017743248}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3915359173704675204}
+  - {fileID: 6241253760156492882}
   m_Father: {fileID: 583076372021986542}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6938336632855916601
@@ -1598,13 +1614,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8281104430530067480}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0138, y: 0.9044, z: 0.0399}
-  m_LocalScale: {x: 0.018361194, y: 0.018361194, z: 0.018361194}
+  m_LocalRotation: {x: -0.063711576, y: -0.052087296, z: 0.023834817, w: 0.99632305}
+  m_LocalPosition: {x: -0.016573396, y: -0.067955606, z: 0.020602245}
+  m_LocalScale: {x: 0.018361194, y: 0.018361196, z: 0.018361194}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8470280143016363586}
-  m_Father: {fileID: 6483658254058126920}
+  m_Father: {fileID: 7992240340837036345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2117397975063881013
 MeshFilter:

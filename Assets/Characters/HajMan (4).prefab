@@ -204,6 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8007880645670030750}
   - component: {fileID: 3025601962133143113}
+  - component: {fileID: -9025640956633685455}
   m_Layer: 0
   m_Name: HajMan (4)
   m_TagString: Untagged
@@ -252,6 +253,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-9025640956633685455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100791915394311190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f9727bade570443a5ca34e7626f82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationStates: []
+  minSpeed: 0.8
+  maxSpeed: 1.2
 --- !u!1 &2204643993754695864
 GameObject:
   m_ObjectHideFlags: 0

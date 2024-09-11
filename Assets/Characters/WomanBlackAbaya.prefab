@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145987670616486882}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0138, y: 0.9044, z: 0.0399}
-  m_LocalScale: {x: 0.018361194, y: 0.018361194, z: 0.018361194}
+  m_LocalRotation: {x: -0.063711576, y: -0.052087296, z: 0.023834817, w: 0.99632305}
+  m_LocalPosition: {x: -0.016573396, y: -0.067955606, z: 0.020602245}
+  m_LocalScale: {x: 0.018361194, y: 0.018361196, z: 0.018361194}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 928515625437025843}
-  m_Father: {fileID: 5716490829437124295}
+  m_Father: {fileID: 4442408409451033412}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3222760948740463572
 MeshFilter:
@@ -590,13 +590,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3525919204648754294}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0192, y: 0.9044, z: 0.0367}
-  m_LocalScale: {x: 0.018686187, y: 0.018686187, z: 0.018686187}
+  m_LocalRotation: {x: -0.063711576, y: -0.052087296, z: 0.023834817, w: 0.99632305}
+  m_LocalPosition: {x: 0.016545191, y: -0.06657241, z: 0.02073503}
+  m_LocalScale: {x: 0.018686187, y: 0.018686188, z: 0.018686187}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6219175664001148233}
-  m_Father: {fileID: 5716490829437124295}
+  m_Father: {fileID: 4442408409451033412}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &917159599589812358
 MeshFilter:
@@ -1360,7 +1360,9 @@ Transform:
   m_LocalPosition: {x: -0, y: 0.1132383, z: 0.017743248}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6277675535609896664}
+  - {fileID: 4349113400156363300}
   m_Father: {fileID: 172839893904088109}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7289175069260246417
@@ -1630,6 +1632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5716490829437124295}
   - component: {fileID: 9096076064473763336}
+  - component: {fileID: -4220658091249745217}
   m_Layer: 0
   m_Name: WomanBlackAbaya
   m_TagString: Untagged
@@ -1653,8 +1656,6 @@ Transform:
   - {fileID: 5794870043561755537}
   - {fileID: 3820617599791886638}
   - {fileID: 8307372423635049546}
-  - {fileID: 6277675535609896664}
-  - {fileID: 4349113400156363300}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9096076064473763336
@@ -1678,6 +1679,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-4220658091249745217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784449085373675603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f9727bade570443a5ca34e7626f82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationStates: []
+  minSpeed: 0.8
+  maxSpeed: 1.2
 --- !u!1 &8936646650366822111
 GameObject:
   m_ObjectHideFlags: 0

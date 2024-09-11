@@ -28,7 +28,7 @@ public class CamControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             float mouseX = Input.GetAxisRaw("Mouse X") * sensX * Time.deltaTime;
             float mouseY = Input.GetAxisRaw("Mouse Y") * sensX * Time.deltaTime;
