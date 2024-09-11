@@ -1429,6 +1429,7 @@ GameObject:
   - component: {fileID: 4709567983988205889}
   - component: {fileID: 659932335909810830}
   - component: {fileID: 1442565638393329472}
+  - component: {fileID: -664971608799668185}
   m_Layer: 0
   m_Name: BarbarianBlue
   m_TagString: Untagged
@@ -1495,6 +1496,28 @@ MonoBehaviour:
   animationStates: []
   minSpeed: 0.8
   maxSpeed: 1.2
+--- !u!64 &-664971608799668185
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4677090704083772792}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3101630494087932255, guid: c2d63266a1e11ad48b87c7519887ef0d, type: 3}
 --- !u!1 &4695782819156706369
 GameObject:
   m_ObjectHideFlags: 0
