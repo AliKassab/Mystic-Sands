@@ -1,4 +1,6 @@
+using DialogueEditor;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TestStart : MonoBehaviour
@@ -6,6 +8,14 @@ public class TestStart : MonoBehaviour
     public float targetYPosition = 5f; // Target Y position
     public float speed = 2f;           // Speed of movement
     private bool shouldMove = false;   // Flag to control movement
+    [SerializeField] private NPCConversation myConversation;
+    public float delayTimer = 1f;
+    public GameObject smoke;
+    public GameObject skullModel;
+    public Animator skullAnimation;
+    public AnimationClip animationClip;
+    public TMPro.TextMeshProUGUI interactionText;
+    private bool isInteractable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +26,18 @@ public class TestStart : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            shouldMove = true; // Start moving when the player is in the trigger
+            if (other.CompareTag("Player") && isInteractable)
+            {
+                Debug.Log("PRESSS E");
+
+                if (Input.GetKeyDown(KeyCode.E) && isInteractable)
+                {
+
+
+
+                    shouldMove = true; // lma y3ml el puzzel ash8al el bool dh
+                }
+            }
         }
     }
 
@@ -36,4 +57,8 @@ public class TestStart : MonoBehaviour
             }
         }
     }
+
+
+    
+
 }
