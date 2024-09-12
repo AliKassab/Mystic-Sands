@@ -2,46 +2,44 @@ using DialogueEditor;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using DialogueEditor;
 public class TestStart : MonoBehaviour
 {
     public float targetYPosition = 5f; // Target Y position
     public float speed = 2f;           // Speed of movement
     private bool shouldMove = false;   // Flag to control movement
-    [SerializeField] private NPCConversation myConversation;
     public float delayTimer = 1f;
-    public GameObject smoke;
-    public GameObject skullModel;
-    public Animator skullAnimation;
-    public AnimationClip animationClip;
-    public TMPro.TextMeshProUGUI interactionText;
     private bool isInteractable = true;
-
-    // Start is called before the first frame update
-    void Start()
+    private PanelManager panelManager; // Reference to the Panel Manager
+    public int panelIndex;             // Index for the panel to open, set when instantiated
+    [SerializeField] private NPCConversation myConversation;
+    public void Initialize(PanelManager manager, int index, NPCConversation conversation)
     {
+        panelManager = manager;
+        panelIndex = index;
+        myConversation = conversation; // Set the conversation for this instance
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && isInteractable)
         {
-            if (other.CompareTag("Player") && isInteractable)
+            Debug.Log("PRESS E");
+
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("PRESSS E");
+                shouldMove = true; // Start moving the object
 
-                if (Input.GetKeyDown(KeyCode.E) && isInteractable)
-                {
-
-
-
-                    shouldMove = true; // lma y3ml el puzzel ash8al el bool dh
-                }
+                // Open the specific panel and pass the conversation to the PanelManager
+                panelManager.OpenPanel(panelIndex, myConversation);
+                //if (myConversation != null)
+                //{
+                //    ConversationManager.Instance.StartConversation(myConversation);
+                //}
             }
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (shouldMove)
@@ -56,9 +54,11 @@ public class TestStart : MonoBehaviour
                 shouldMove = false;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            panelManager.ClosePanel();
+        }
     }
-
-
-    
 
 }

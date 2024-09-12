@@ -1,3 +1,4 @@
+using DialogueEditor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,7 +39,11 @@ public class MazeRenderer : MonoBehaviour
     [SerializeField]
     private Transform doorPrefab = null;
 
-   
+    [SerializeField]
+    private PanelManager panelManager = null;
+    
+    [SerializeField]
+    private NPCConversation[] doorConversations;
 
 
     public void buildNewMaze()
@@ -74,9 +79,10 @@ public class MazeRenderer : MonoBehaviour
     private void Draw(WallState[,] maze)
 {
 
-        int doorCount = 3; // Example: place 3 doors
-        int step = MazeGenerator.solutionPath.Count / (doorCount + 1); 
+        int doorCount = 3;
+        int step = MazeGenerator.solutionPath.Count / (doorCount + 1);
 
+        int doorIndex = 0;
 
         for (int i = 0; i < width; ++i)
     {
@@ -92,7 +98,17 @@ public class MazeRenderer : MonoBehaviour
 
                 if (MazeGenerator.solutionPath.Contains(new Position { X = i, Y = j }) && MazeGenerator.solutionPath.IndexOf(new Position { X = i, Y = j }) % step == 0)
                 {
-                    Instantiate(doorPrefab, position, Quaternion.identity);
+
+                    var door = Instantiate(doorPrefab, position, Quaternion.identity);
+
+                   
+                    var testStart = door.GetComponent<TestStart>();
+                    if (testStart != null && doorIndex < doorConversations.Length)
+                    {
+                        testStart.Initialize(panelManager, doorIndex, doorConversations[doorIndex]);
+                    }
+
+                    doorIndex++; 
                 }
 
                 if (i==0 && j==0)
