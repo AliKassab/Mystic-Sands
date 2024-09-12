@@ -1429,7 +1429,7 @@ GameObject:
   - component: {fileID: 4709567983988205889}
   - component: {fileID: 659932335909810830}
   - component: {fileID: 1442565638393329472}
-  - component: {fileID: -664971608799668185}
+  - component: {fileID: -6092920421137721410}
   m_Layer: 0
   m_Name: BarbarianBlue
   m_TagString: Untagged
@@ -1496,8 +1496,8 @@ MonoBehaviour:
   animationStates: []
   minSpeed: 0.8
   maxSpeed: 1.2
---- !u!64 &-664971608799668185
-MeshCollider:
+--- !u!136 &-6092920421137721410
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1514,10 +1514,11 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3101630494087932255, guid: c2d63266a1e11ad48b87c7519887ef0d, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.03
+  m_Height: 0.24
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.12, z: 0}
 --- !u!1 &4695782819156706369
 GameObject:
   m_ObjectHideFlags: 0

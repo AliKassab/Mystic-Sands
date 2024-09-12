@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 5323995427137606473}
   - component: {fileID: 8273703906574968881}
   - component: {fileID: -5887535751143222333}
-  - component: {fileID: -7937559765339202222}
+  - component: {fileID: 9162026445873760786}
   m_Layer: 0
   m_Name: BarbarianGreenNB
   m_TagString: Untagged
@@ -851,8 +851,8 @@ MonoBehaviour:
   animationStates: []
   minSpeed: 0.8
   maxSpeed: 1.2
---- !u!64 &-7937559765339202222
-MeshCollider:
+--- !u!136 &9162026445873760786
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -869,10 +869,11 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3101630494087932255, guid: c2d63266a1e11ad48b87c7519887ef0d, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.03
+  m_Height: 0.24
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.12, z: 0}
 --- !u!1 &2099654899549035491
 GameObject:
   m_ObjectHideFlags: 0

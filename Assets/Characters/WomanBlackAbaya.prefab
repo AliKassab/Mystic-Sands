@@ -1633,7 +1633,7 @@ GameObject:
   - component: {fileID: 5716490829437124295}
   - component: {fileID: 9096076064473763336}
   - component: {fileID: -4220658091249745217}
-  - component: {fileID: 7430104904777134113}
+  - component: {fileID: 8675750805111367950}
   m_Layer: 0
   m_Name: WomanBlackAbaya
   m_TagString: Untagged
@@ -1695,8 +1695,8 @@ MonoBehaviour:
   animationStates: []
   minSpeed: 0.8
   maxSpeed: 1.2
---- !u!64 &7430104904777134113
-MeshCollider:
+--- !u!136 &8675750805111367950
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1713,10 +1713,11 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2979893323805041001, guid: d9cb6a67353cf8d42810be1f8bec1cfc, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.19274902
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.46, z: 0}
 --- !u!1 &8936646650366822111
 GameObject:
   m_ObjectHideFlags: 0

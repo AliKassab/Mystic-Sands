@@ -3,19 +3,43 @@ using UnityEngine.AI;
 
 public class RandomRoam : MonoBehaviour
 {
-    public Transform[] waypoints;    // Array of waypoints for patrol
-    public float roamRadius = 10f;   // Radius within which the agent will roam
-    public float roamDelay = 5f;     // Time delay between each roam
-    public float waypointTolerance = 1f; // Distance to consider reaching a waypoint
+    public Transform[] waypoints;            // Array of waypoints for patrol
+    public float roamRadius = 10f;           // Radius within which the agent will roam
+    public float roamDelay = 5f;             // Time delay between each roam
+    public float waypointTolerance = 1f;     // Distance to consider reaching a waypoint
 
     private NavMeshAgent agent;
-    private Vector3 startPosition;   // Starting position of the agent
+    private Vector3 startPosition;           // Starting position of the agent
     private int currentWaypointIndex = 0;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+
+        if (agent == null)
+        {
+            Debug.LogError("NavMeshAgent component is missing.");
+            return;
+        }
+
+        if (!agent.isActiveAndEnabled)
+        {
+            Debug.LogError("NavMeshAgent is not active.");
+            return;
+        }
+
         startPosition = transform.position;
+
+        // Ensure the agent is on a NavMesh surface
+        if (NavMesh.SamplePosition(startPosition, out NavMeshHit hit, 1.0f, NavMesh.AllAreas))
+        {
+            transform.position = hit.position; // Snap agent to nearest point on NavMesh
+        }
+        else
+        {
+            Debug.LogError("Agent is not placed on a NavMesh.");
+            return;
+        }
 
         agent.avoidancePriority = 50; // Default value, adjust as needed
 
@@ -23,12 +47,13 @@ public class RandomRoam : MonoBehaviour
         {
             // Start patrolling between waypoints
             SetDestinationToWaypoint();
-            InvokeRepeating("SetNextWaypoint", 0, roamDelay);
+            InvokeRepeating(nameof(SetNextWaypoint), roamDelay, roamDelay);
         }
         else
         {
-            // Start random roaming within the defined radius
-            InvokeRepeating("SetRandomDestination", 0, roamDelay);
+            // Set the initial random destination
+            SetRandomDestination();
+            InvokeRepeating(nameof(SetRandomDestination), roamDelay, roamDelay);
         }
     }
 

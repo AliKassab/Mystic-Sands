@@ -618,7 +618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 891344091829567393}
   - component: {fileID: 6791355561580684277}
-  - component: {fileID: 2936757063995951324}
+  - component: {fileID: -8707469035706470554}
   m_Layer: 0
   m_Name: Trader 1
   m_TagString: Untagged
@@ -666,8 +666,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!64 &2936757063995951324
-MeshCollider:
+--- !u!136 &-8707469035706470554
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -684,10 +684,11 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6011116297216894881, guid: fa3466d6a8cb75345891e8d89fc29b40, type: 3}
+  serializedVersion: 2
+  m_Radius: 1.81
+  m_Height: 8.54
+  m_Direction: 1
+  m_Center: {x: 0, y: 3.86, z: 0}
 --- !u!1 &4203383466514968362
 GameObject:
   m_ObjectHideFlags: 0

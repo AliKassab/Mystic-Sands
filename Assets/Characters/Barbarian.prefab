@@ -920,7 +920,7 @@ GameObject:
   - component: {fileID: 3933694565241886852}
   - component: {fileID: 2815104843766745905}
   - component: {fileID: 6791286047911325674}
-  - component: {fileID: -167107253157647797}
+  - component: {fileID: 9206469107615131183}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Untagged
@@ -987,8 +987,8 @@ MonoBehaviour:
   animationStates: []
   minSpeed: 0.8
   maxSpeed: 1.2
---- !u!64 &-167107253157647797
-MeshCollider:
+--- !u!136 &9206469107615131183
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1005,10 +1005,11 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3101630494087932255, guid: c2d63266a1e11ad48b87c7519887ef0d, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.03
+  m_Height: 0.24
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.12, z: 0}
 --- !u!1 &3876866517835762880
 GameObject:
   m_ObjectHideFlags: 0

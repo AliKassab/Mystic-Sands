@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 3912626734915947225}
   - component: {fileID: 4352160281444436705}
   - component: {fileID: -782607745143134357}
-  - component: {fileID: 4763479643251850625}
+  - component: {fileID: 5681172818108715486}
   m_Layer: 0
   m_Name: HajMan (1)
   m_TagString: Untagged
@@ -235,8 +235,8 @@ MonoBehaviour:
   animationStates: []
   minSpeed: 0.8
   maxSpeed: 1.2
---- !u!64 &4763479643251850625
-MeshCollider:
+--- !u!136 &5681172818108715486
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -253,10 +253,11 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2959467708922500008, guid: a67bb191d54093a48a9d213d447f3da1, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.32
+  m_Height: 1.72
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.81, z: 0}
 --- !u!1 &2499791003753173441
 GameObject:
   m_ObjectHideFlags: 0

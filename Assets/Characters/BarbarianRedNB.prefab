@@ -2677,7 +2677,7 @@ GameObject:
   - component: {fileID: 2540772324652096311}
   - component: {fileID: 4561134918283199990}
   - component: {fileID: -6960150698995703477}
-  - component: {fileID: 115333114131049828}
+  - component: {fileID: 3745858104905036625}
   m_Layer: 0
   m_Name: BarbarianRedNB
   m_TagString: Untagged
@@ -2743,8 +2743,8 @@ MonoBehaviour:
   animationStates: []
   minSpeed: 0.8
   maxSpeed: 1.2
---- !u!64 &115333114131049828
-MeshCollider:
+--- !u!136 &3745858104905036625
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2761,7 +2761,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3101630494087932255, guid: c2d63266a1e11ad48b87c7519887ef0d, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.03
+  m_Height: 0.24
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.12, z: 0}
