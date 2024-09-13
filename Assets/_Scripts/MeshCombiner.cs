@@ -43,7 +43,9 @@ public class InstanceCombiner : MonoBehaviour
 
     public static void SaveMesh(Mesh mesh, string name, bool makeNewInstance, bool optimizeMesh)
     {
+#if UNITY_EDITOR
         string path = EditorUtility.SaveFilePanel("Save Separate Mesh Asset", "Assets/", name, "asset");
+
         if (string.IsNullOrEmpty(path)) return;
 
         path = FileUtil.GetProjectRelativePath(path);
@@ -55,5 +57,6 @@ public class InstanceCombiner : MonoBehaviour
 
         AssetDatabase.CreateAsset(meshToSave, path);
         AssetDatabase.SaveAssets();
+#endif
     }
 }
