@@ -60,6 +60,7 @@ public class MazeGenerator
             default: return WallState.LEFT;
         }
     }
+    public static List<Position> solutionPath = new List<Position>();
 
     private static WallState[,] ApplyRecursiveBacktracker(WallState[,] maze, int width, int height)
     {
@@ -70,6 +71,7 @@ public class MazeGenerator
 
         maze[position.X, position.Y] |= WallState.VISITED;  // 1000 1111
         positionStack.Push(position);
+        solutionPath.Add(position); 
 
         while (positionStack.Count > 0)
         {
@@ -89,6 +91,8 @@ public class MazeGenerator
                 maze[nPosition.X, nPosition.Y] |= WallState.VISITED;
 
                 positionStack.Push(nPosition);
+                solutionPath.Add(nPosition); 
+
             }
         }
 
