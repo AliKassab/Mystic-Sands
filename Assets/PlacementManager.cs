@@ -30,10 +30,10 @@ public class PlacementManager : MonoBehaviour
 
         if (allItemsPlacedCorrectly)
         {
-            
             Debug.Log("All items are placed correctly!");
             // Trigger any additional actions needed
             panelManager.ClosePanel();
+            
         }
     }
 }
