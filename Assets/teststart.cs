@@ -5,14 +5,15 @@ using UnityEngine;
 using DialogueEditor;
 public class TestStart : MonoBehaviour
 {
-    public float targetYPosition = 5f; // Target Y position
-    public float speed = 2f;           // Speed of movement
-    private bool shouldMove = false;   // Flag to control movement
+    public float targetYPosition = 5f; 
+    public float speed = 2f;          
+    private bool shouldMove = false;   
     public float delayTimer = 1f;
     private bool isInteractable = true;
-    private PanelManager panelManager; // Reference to the Panel Manager
-    public int panelIndex;             // Index for the panel to open, set when instantiated
+    private PanelManager panelManager; 
+    public int panelIndex;             
     [SerializeField] private NPCConversation myConversation;
+    //public PlacementManager placementManager; 
     public void Initialize(PanelManager manager, int index, NPCConversation conversation)
     {
         panelManager = manager;
@@ -55,10 +56,11 @@ public class TestStart : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            panelManager.ClosePanel();
-        }
+        //if (placementManager.allItemsPlacedCorrectly)
+        //{
+            
+        //    panelManager.ClosePanel();
+        //}
     }
 
 }

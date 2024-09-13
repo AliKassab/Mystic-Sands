@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragDrop : MonoBehaviour , IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    private PlacementManager placementManager;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -26,6 +25,7 @@ public class DragDrop : MonoBehaviour , IPointerDownHandler, IBeginDragHandler, 
         Debug.Log("OnEndDrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+        placementManager.CheckPlacement(); // Check placement when dragging ends
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -36,18 +36,21 @@ public class DragDrop : MonoBehaviour , IPointerDownHandler, IBeginDragHandler, 
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("OnDrop");
+        if (eventData.pointerDrag != null)
+        {
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            placementManager.CheckPlacement(); // Check placement after dropping
+        }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        placementManager = FindObjectOfType<PlacementManager>(); // Assuming PlacementManager is on the same scene
     }
 
-    // Update is called once per frame
     void Update()
     {
-
     }
 }
