@@ -1,0 +1,335 @@
+newmtl StripFabric
+    Ns 25.490194
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd AbdulHamid/StripFabric_diffuse.png
+    map_D AbdulHamid/StripFabric_diffuse.png
+    map_Pm AbdulHamid/StripFabric_metallic.png
+    map_Pr AbdulHamid/StripFabric_roughness.png
+newmtl Std_Cornea_L
+    Ns 11.000000
+    d 0.800000
+    Ka 0.196078 0.196078 0.196078
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.000000 0.000000 0.000000
+    map_Kd AbdulHamid/Std_Cornea_L_diffuse.png
+    map_Pm AbdulHamid/Std_Cornea_L_metallic.jpg
+    map_Pr AbdulHamid/Std_Cornea_L_roughness.jpg
+newmtl Std_Eye_L
+    Ns 20.000000
+    d 1.000000
+    Ka 0.196078 0.196078 0.196078
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.898039 0.898039 0.898039
+    map_Kd AbdulHamid/Std_Eye_L_diffuse.png
+    map_Pm AbdulHamid/Std_Eye_L_metallic.jpg
+    map_Pr AbdulHamid/Std_Eye_L_roughness.jpg
+newmtl Leather___shoes
+    Ns 45.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.898039 0.898039 0.898039
+    map_Kd AbdulHamid/Leather___shoes_diffuse.jpg
+    map_Ks AbdulHamid/Leather___shoes_specular.jpg
+    map_Pr AbdulHamid/Leather___shoes_roughness.png
+newmtl Std_Cornea_R
+    Ns 11.000000
+    d 0.800000
+    Ka 0.196078 0.196078 0.196078
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.000000 0.000000 0.000000
+    map_Kd AbdulHamid/Std_Cornea_R_diffuse.png
+    map_Pm AbdulHamid/Std_Cornea_R_metallic.jpg
+    map_Pr AbdulHamid/Std_Cornea_R_roughness.jpg
+newmtl SilverDark
+    Ns 9.803922
+    d 1.000000
+    Ka 0.000000 0.000000 0.000000
+    Kd 0.086653 0.086653 0.086653
+    Ks 0.427753 0.427753 0.427753
+    map_Pm AbdulHamid/SilverDark_metallic.png
+    map_Pr AbdulHamid/SilverDark_roughness.png
+newmtl Layer_1_Front_Inflation_Material_NONE
+    Ns 3.921569
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd AbdulHamid/Layer_1_Front_Inflation_Material_NONE_diffuse.png
+    map_D AbdulHamid/Layer_1_Front_Inflation_Material_NONE_diffuse.png
+    map_Pm AbdulHamid/SilverDark_metallic.png
+    map_Pr AbdulHamid/SilverDark_roughness.png
+newmtl obj_default
+    Ns 10.000000
+    d 1.000000
+    Ka 0.200000 0.200000 0.200000
+    Kd 0.800000 0.800000 0.800000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd AbdulHamid/obj_default_diffuse.png
+    map_D AbdulHamid/obj_default_diffuse.png
+newmtl Std_Skin_Head
+    Ns 20.000000
+    d 1.000000
+    Ka 0.490196 0.490196 0.490196
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.269400 0.269400 0.269400
+    map_Kd AbdulHamid/Std_Skin_Head_diffuse.png
+    map_Pr AbdulHamid/Std_Skin_Head_roughness.png
+newmtl CAne
+    Ns 96.078423
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd AbdulHamid/CAne_diffuse.jpg
+    map_Pm AbdulHamid/CAne_metallic.png
+    map_Pr AbdulHamid/CAne_roughness.png
+newmtl Std_Skin_Arm
+    Ns 20.000000
+    d 1.000000
+    Ka 0.490196 0.490196 0.490196
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.269400 0.269400 0.269400
+    map_Kd AbdulHamid/Std_Skin_Arm_diffuse.png
+    map_Pr AbdulHamid/Std_Skin_Arm_roughness.jpg
+newmtl Layer_0_Back_Inflation_Material
+    Ns 4.000000
+    d 0.730000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.000000 0.000000 0.000000
+    map_Kd AbdulHamid/Layer_0_Back_Inflation_Material_diffuse.png
+    map_Pm AbdulHamid/Layer_0_Back_Inflation_Material_metallic.png
+    map_Pr AbdulHamid/Layer_0_Back_Inflation_Material_roughness.png
+newmtl Silver
+    Ns 13.725490
+    d 1.000000
+    Ka 0.000000 0.000000 0.000000
+    Kd 0.233617 0.233617 0.233617
+    Ks 1.000000 1.000000 1.000000
+    map_Pm AbdulHamid/SilverDark_metallic.png
+    map_Pr AbdulHamid/SilverDark_roughness.png
+newmtl Layer_1_Front_Inflation_Material
+    Ns 3.921569
+    d 1.000000
+    Ka 0.000000 0.000000 0.000000
+    Kd 0.500000 0.500000 0.500000
+    Ks 0.000000 0.000000 0.000000
+    map_Pm AbdulHamid/SilverDark_metallic.png
+    map_Pr AbdulHamid/SilverDark_roughness.png
+newmtl Layer_0_Front_Bevel_Material
+    Ns 3.921569
+    d 1.000000
+    Ka 0.000000 0.000000 0.000000
+    Kd 0.400000 0.400000 0.400000
+    Ks 0.100000 0.100000 0.100000
+    map_Pm AbdulHamid/Layer_0_Front_Bevel_Material_metallic.png
+    map_Pr AbdulHamid/Layer_0_Front_Bevel_Material_roughness.png
+newmtl Layer_0_Back_Inflation_Material_00
+    Ns 3.921569
+    d 1.000000
+    Ka 0.000000 0.000000 0.000000
+    Kd 0.400000 0.400000 0.400000
+    Ks 0.100000 0.100000 0.100000
+    map_Pm AbdulHamid/Layer_0_Front_Bevel_Material_metallic.png
+    map_Pr AbdulHamid/Layer_0_Front_Bevel_Material_roughness.png
+newmtl Layer_0_Front_Inflation_Material
+    Ns 3.921569
+    d 1.000000
+    Ka 0.000000 0.000000 0.000000
+    Kd 0.400000 0.400000 0.400000
+    Ks 0.100000 0.100000 0.100000
+    map_Pm AbdulHamid/Layer_0_Front_Bevel_Material_metallic.png
+    map_Pr AbdulHamid/Layer_0_Front_Bevel_Material_roughness.png
+newmtl Std_Tongue
+    Ns 2.000000
+    d 1.000000
+    Ka 0.490196 0.490196 0.490196
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.900000 0.900000 0.900000
+    map_Kd AbdulHamid/Std_Tongue_diffuse.png
+    map_Pm AbdulHamid/Std_Tongue_metallic.png
+    map_Pr AbdulHamid/Std_Tongue_roughness.png
+    map_refl AbdulHamid/Std_Tongue_reflection.png
+newmtl fez
+    Ns 998.039246
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd AbdulHamid/fez_diffuse.png
+    map_Pm AbdulHamid/fez_metallic.png
+    map_Pr AbdulHamid/fez_roughness.png
+newmtl Layer_0_Front_Inflation_Material_00
+    Ns 3.921569
+    d 0.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Pm AbdulHamid/Layer_0_Back_Inflation_Material_metallic.png
+    map_Pr AbdulHamid/Layer_0_Back_Inflation_Material_roughness.png
+newmtl Center
+    Ns 96.078423
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd AbdulHamid/Center_diffuse.png
+    map_D AbdulHamid/Center_diffuse.png
+    map_Pm AbdulHamid/Layer_0_Front_Bevel_Material_metallic.png
+    map_Pr AbdulHamid/Layer_0_Front_Bevel_Material_roughness.png
+newmtl Std_Skin_Body
+    Ns 20.000000
+    d 1.000000
+    Ka 0.490196 0.490196 0.490196
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.269400 0.269400 0.269400
+    map_Kd AbdulHamid/Std_Skin_Body_diffuse.png
+    map_Pr AbdulHamid/Std_Skin_Body_roughness.jpg
+newmtl Layer_0_Back_Bevel_Material
+    Ns 3.921569
+    d 1.000000
+    Ka 0.000000 0.000000 0.000000
+    Kd 0.400000 0.400000 0.400000
+    Ks 0.100000 0.100000 0.100000
+    map_Pm AbdulHamid/Layer_0_Front_Bevel_Material_metallic.png
+    map_Pr AbdulHamid/Layer_0_Front_Bevel_Material_roughness.png
+newmtl Layer_0_Extrusion_Material
+    Ns 3.921569
+    d 0.000000
+    Ka 0.000000 0.000000 0.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.000000 0.000000 0.000000
+    map_Pm AbdulHamid/Layer_0_Back_Inflation_Material_metallic.png
+    map_Pr AbdulHamid/Layer_0_Back_Inflation_Material_roughness.png
+newmtl Slacks
+    Ns 10.000000
+    d 1.000000
+    Ka 0.501961 0.501961 0.501961
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.898039 0.898039 0.898039
+    map_Kd AbdulHamid/Slacks_diffuse.jpg
+    map_Ks AbdulHamid/Slacks_specular.jpg
+    map_Pr AbdulHamid/Slacks_roughness.png
+newmtl Std_Eye_Occlusion_R
+    Ns 1.000000
+    d 1.000000
+    Ka 0.000000 0.000000 0.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.000000 0.000000 0.000000
+    map_Kd AbdulHamid/Std_Eye_Occlusion_R_diffuse.jpg
+    map_D AbdulHamid/Std_Eye_Occlusion_R_opacity.jpg
+    map_Pm AbdulHamid/Std_Eye_Occlusion_R_metallic.jpg
+    map_Pr AbdulHamid/Std_Eye_Occlusion_R_roughness.jpg
+newmtl Std_Eye_Occlusion_L
+    Ns 1.000000
+    d 1.000000
+    Ka 0.000000 0.000000 0.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.000000 0.000000 0.000000
+    map_Kd AbdulHamid/Std_Eye_Occlusion_L_diffuse.jpg
+    map_D AbdulHamid/Std_Eye_Occlusion_L_opacity.jpg
+    map_Pm AbdulHamid/Std_Eye_Occlusion_L_metallic.jpg
+    map_Pr AbdulHamid/Std_Eye_Occlusion_L_roughness.jpg
+newmtl Std_Tearline_R
+    Ns 1.000000
+    d 1.000000
+    Ka 0.000000 0.000000 0.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.000000 0.000000 0.000000
+    map_Kd AbdulHamid/Std_Tearline_R_diffuse.jpg
+    map_D AbdulHamid/Std_Tearline_R_opacity.jpg
+    map_Pm AbdulHamid/Std_Tearline_R_metallic.jpg
+    map_Pr AbdulHamid/Std_Tearline_R_roughness.jpg
+newmtl Business___Suit
+    Ns 10.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.898039 0.898039 0.898039
+    map_Kd AbdulHamid/Business___Suit_diffuse.jpg
+    map_Ks AbdulHamid/Business___Suit_specular.jpg
+    map_Pr AbdulHamid/Business___Suit_roughness.png
+newmtl Std_Tearline_L
+    Ns 1.000000
+    d 1.000000
+    Ka 0.000000 0.000000 0.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.000000 0.000000 0.000000
+    map_Kd AbdulHamid/Std_Tearline_L_diffuse.jpg
+    map_D AbdulHamid/Std_Tearline_R_opacity.jpg
+    map_Pm AbdulHamid/Std_Tearline_L_metallic.jpg
+    map_Pr AbdulHamid/Std_Tearline_L_roughness.jpg
+newmtl Business___Shirt
+    Ns 7.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.898039 0.898039 0.898039
+    map_Kd AbdulHamid/Business___Shirt_diffuse.jpg
+    map_Ks AbdulHamid/Business___Shirt_specular.jpg
+    map_Pr AbdulHamid/Business___Shirt_roughness.png
+newmtl Necktie
+    Ns 30.000002
+    d 1.000000
+    Ka 0.392157 0.392157 0.392157
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.898039 0.898039 0.898039
+    map_Kd AbdulHamid/Necktie_diffuse.jpg
+    map_Ks AbdulHamid/Necktie_specular.jpg
+    map_Pr AbdulHamid/Necktie_roughness.png
+newmtl Std_Lower_Teeth
+    Ns 2.000000
+    d 1.000000
+    Ka 0.490196 0.490196 0.490196
+    Kd 0.882353 0.882353 0.882353
+    Ks 0.900000 0.900000 0.900000
+    map_Kd AbdulHamid/Std_Lower_Teeth_diffuse.png
+    map_Pm AbdulHamid/Std_Lower_Teeth_metallic.jpg
+    map_Pr AbdulHamid/Std_Lower_Teeth_roughness.jpg
+newmtl Std_Nails
+    Ns 20.000000
+    d 1.000000
+    Ka 0.490196 0.490196 0.490196
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.269400 0.269400 0.269400
+    map_Kd AbdulHamid/Std_Nails_diffuse.jpg
+    map_Pr AbdulHamid/Std_Nails_roughness.jpg
+newmtl Std_Eye_R
+    Ns 20.000000
+    d 1.000000
+    Ka 0.196078 0.196078 0.196078
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.898039 0.898039 0.898039
+    map_Kd AbdulHamid/Std_Eye_R_diffuse.png
+    map_Pm AbdulHamid/Std_Eye_R_metallic.jpg
+    map_Pr AbdulHamid/Std_Eye_R_roughness.jpg
+newmtl Std_Skin_Leg
+    Ns 20.000000
+    d 1.000000
+    Ka 0.490196 0.490196 0.490196
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.269400 0.269400 0.269400
+    map_Kd AbdulHamid/Std_Skin_Leg_diffuse.png
+    map_Pr AbdulHamid/Std_Skin_Leg_roughness.jpg
+newmtl Std_Upper_Teeth
+    Ns 2.000000
+    d 1.000000
+    Ka 0.490196 0.490196 0.490196
+    Kd 0.882353 0.882353 0.882353
+    Ks 0.900000 0.900000 0.900000
+    map_Kd AbdulHamid/Std_Upper_Teeth_diffuse.png
+    map_Pm AbdulHamid/Std_Upper_Teeth_metallic.jpg
+    map_Pr AbdulHamid/Std_Upper_Teeth_roughness.jpg
+newmtl Std_Eyelash
+    Ns 2.000000
+    d 1.000000
+    Ka 0.490196 0.490196 0.490196
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.900000 0.900000 0.900000
+    map_Kd AbdulHamid/Std_Eyelash_diffuse.jpg
+    map_D AbdulHamid/Std_Eyelash_opacity.png
+    map_Pr AbdulHamid/Std_Eyelash_roughness.jpg

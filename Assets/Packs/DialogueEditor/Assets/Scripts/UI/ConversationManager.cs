@@ -338,26 +338,15 @@ namespace DialogueEditor
 
         private void ScrollingText_Update()
         {
-            const float charactersPerSecond = 1500;
-            float timePerChar = (60.0f / charactersPerSecond);
-            timePerChar *= ScrollSpeed;
-
-            m_elapsedScrollTime += Time.deltaTime;
-
-            if (m_elapsedScrollTime > timePerChar)
+            // Check if the text is already fully visible
+            if (DialogueText.maxVisibleCharacters < m_targetScrollTextCount)
             {
-                m_elapsedScrollTime = 0f;
-
-                DialogueText.maxVisibleCharacters = m_scrollIndex;
-                m_scrollIndex++;
-
-                // Finished?
-                if (m_scrollIndex >= m_targetScrollTextCount)
-                {
-                    SetState(eState.TransitioningOptionsOn);
-                }
+                DialogueText.maxVisibleCharacters = m_targetScrollTextCount;
+                SetState(eState.TransitioningOptionsOn);
             }
         }
+
+
 
         private void TransitionOptionsOn_Update()
         {
