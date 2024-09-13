@@ -28,14 +28,17 @@ public class CamControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * sensX * Time.deltaTime;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * sensX * Time.deltaTime;
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            float mouseX = Input.GetAxisRaw("Mouse X") * sensX * Time.deltaTime;
+            float mouseY = Input.GetAxisRaw("Mouse Y") * sensX * Time.deltaTime;
 
-        rotationY += mouseX;
-        rotationX -= mouseY;
-        rotationX = Mathf.Clamp(rotationX, -clampAngleY, clampAngleY);
+            rotationY += mouseX;
+            rotationX -= mouseY;
+            rotationX = Mathf.Clamp(rotationX, -clampAngleY, clampAngleY);
 
-        transform.rotation = Quaternion.Euler(rotationX, rotationY, 0);
-        orientation.rotation = Quaternion.Euler(0, rotationY, 0);
+            transform.rotation = Quaternion.Euler(rotationX, rotationY, 0);
+            orientation.rotation = Quaternion.Euler(0, rotationY, 0);
+        }
     }
 }
