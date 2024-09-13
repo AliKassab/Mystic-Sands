@@ -16,23 +16,21 @@ public class PlacementManager : MonoBehaviour
 
     public void CheckPlacement()
     {
-        allItemsPlacedCorrectly = true;
-
         for (int i = 0; i < items.Count; i++)
         {
             // Assuming exact match is required; you might need a tolerance for floating-point values
-            if (Vector2.Distance(items[i].anchoredPosition, correctPositions[i].anchoredPosition) > 1f)
+            if (Vector2.Distance(items[i].anchoredPosition, correctPositions[i].anchoredPosition) < 1f)
             {
-                allItemsPlacedCorrectly = false;
-                break;
+                allItemsPlacedCorrectly = true;
+                panelManager.ClosePanel();
             }
         }
 
-        if (allItemsPlacedCorrectly)
+        //if (allItemsPlacedCorrectly)
         {
-            Debug.Log("All items are placed correctly!");
+
             // Trigger any additional actions needed
-            panelManager.ClosePanel();
+           // panelManager.ClosePanel();
             
         }
     }

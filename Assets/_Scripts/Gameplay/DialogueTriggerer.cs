@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DialogueEditor;
+using UnityEngine.SceneManagement;
 
 public class DialogueTriggerer : MonoBehaviour
 {
@@ -10,8 +11,10 @@ public class DialogueTriggerer : MonoBehaviour
     public Flagger flagger;
     private void OnTriggerEnter(Collider other)
     {
-        ConversationManager.Instance.StartConversation(conversation);
         playerMovement.enabled = false;
+        if (SceneManager.GetActiveScene().buildIndex == 2) return;
+        ConversationManager.Instance.StartConversation(conversation);
+        
         if(conversation.gameObject.name == "PotsTrader1")
             flagger.MetPotTrader = true;
         else if (conversation.gameObject.name == "Commander1")
@@ -24,8 +27,9 @@ public class DialogueTriggerer : MonoBehaviour
 
     private void Start()
     {
-        conversation = GetComponentInParent<NPCConversation>();
         playerMovement = FindObjectOfType<MoveControl>().GetComponent<MoveControl>();
+        if (SceneManager.GetActiveScene().buildIndex == 2) return;
+        conversation = GetComponentInParent<NPCConversation>();
         flagger = FindObjectOfType<Flagger>().GetComponent<Flagger>();
     }
 

@@ -19,15 +19,15 @@ public class ConversationInitiation : MonoBehaviour
         ToggleObject(interactionText.gameObject, false);  
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && isInteractable)
+        //if (other.CompareTag("Player") && isInteractable)
         {
-            ToggleObject(interactionText.gameObject, true); 
+            //ToggleObject(interactionText.gameObject, true); 
             
-            if (Input.GetKeyDown(KeyCode.E) && isInteractable)
+            //if (Input.GetKeyDown(KeyCode.E) && isInteractable)
             {
-                isInteractable = false;
+                //isInteractable = false;
                 InitiateInteractionAction();
             }
         }
@@ -45,7 +45,8 @@ public class ConversationInitiation : MonoBehaviour
     {
         ToggleObject(skullModel, true);
         skullAnimation.Play(animationClip.name);
-        StartCoroutine(InstantiateDelayedSmoke());
+        ToggleObject(smoke, true);
+        //StartCoroutine(InstantiateDelayedSmoke());
         ConversationManager.Instance.StartConversation(myConversation);
         ToggleObject(interactionText.gameObject, false);
     }

@@ -24,7 +24,6 @@ public class PanelManager : MonoBehaviour
                 panels[i].SetActive(i == panelIndex); // Activate the selected panel and deactivate others
             }
 
-            Debug.Log("Opening panel: " + panelIndex);
         }
         else
         {
@@ -44,7 +43,6 @@ public class PanelManager : MonoBehaviour
             if (currentConversation != null)
             {
                 ConversationManager.Instance.StartConversation(currentConversation);
-                Debug.Log("Starting conversation for panel: " + currentPanelIndex);
             }
             else
             {

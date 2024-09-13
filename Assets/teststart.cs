@@ -21,24 +21,10 @@ public class TestStart : MonoBehaviour
         myConversation = conversation; // Set the conversation for this instance
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && isInteractable)
-        {
-            Debug.Log("PRESS E");
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                shouldMove = true; // Start moving the object
-
-                // Open the specific panel and pass the conversation to the PanelManager
-                panelManager.OpenPanel(panelIndex, myConversation);
-                //if (myConversation != null)
-                //{
-                //    ConversationManager.Instance.StartConversation(myConversation);
-                //}
-            }
-        }
+        shouldMove = true;
+        panelManager.OpenPanel(panelIndex, myConversation);
     }
 
     void Update()
