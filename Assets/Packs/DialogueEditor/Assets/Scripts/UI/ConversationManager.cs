@@ -97,7 +97,7 @@ namespace DialogueEditor
 
             m_uiOptions = new List<UIConversationButton>();
 
-            NpcIcon.sprite = BlankSprite;
+            //NpcIcon.sprite = BlankSprite;
             DialogueText.text = "";
             TurnOffUI();
         }
@@ -271,7 +271,7 @@ namespace DialogueEditor
                     break;
                 case eState.TransitioningDialogueBoxOn:
                     SetColorAlpha(DialogueBackground, 1);
-                    SetColorAlpha(NpcIcon, 1);
+                    //SetColorAlpha(NpcIcon, 1);
                     SetColorAlpha(NameText, 1);
                     break;
             }
@@ -285,12 +285,10 @@ namespace DialogueEditor
                 case eState.TransitioningDialogueBoxOn:
                     {
                         SetColorAlpha(DialogueBackground, 0);
-                        SetColorAlpha(NpcIcon, 0);
                         SetColorAlpha(NameText, 0);
 
                         DialogueText.text = "";
                         NameText.text = m_currentSpeech.Name;
-                        NpcIcon.sprite = m_currentSpeech.Icon != null ? m_currentSpeech.Icon : BlankSprite;
                     }
                     break;
 
@@ -334,7 +332,7 @@ namespace DialogueEditor
             }
 
             SetColorAlpha(DialogueBackground, t);
-            SetColorAlpha(NpcIcon, t);
+   
             SetColorAlpha(NameText, t);
         }
 
@@ -444,7 +442,6 @@ namespace DialogueEditor
             }
 
             SetColorAlpha(DialogueBackground, 1 - t);
-            SetColorAlpha(NpcIcon, 1 - t);
             SetColorAlpha(NameText, 1 - t);
         }
 
@@ -469,15 +466,6 @@ namespace DialogueEditor
             ClearOptions();
             m_currentSelectedIndex = 0;
 
-            // Set sprite
-            if (speech.Icon == null)
-            {
-                NpcIcon.sprite = BlankSprite;
-            }
-            else
-            {
-                NpcIcon.sprite = speech.Icon;
-            }
 
             // Set font
             if (speech.TMPFont != null)
@@ -639,7 +627,7 @@ namespace DialogueEditor
                     DialogueBackground.type = Image.Type.Simple;
             }
 
-            NpcIcon.sprite = BlankSprite;
+            //NpcIcon.sprite = BlankSprite;
         }
 
         private void TurnOffUI()

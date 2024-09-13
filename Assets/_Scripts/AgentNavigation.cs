@@ -18,13 +18,13 @@ public class RandomRoam : MonoBehaviour
 
         if (agent == null)
         {
-            Debug.LogError("NavMeshAgent component is missing.");
+            Debug.LogError("NavMeshAgent component is missing.: " + gameObject.name);
             return;
         }
 
         if (!agent.isActiveAndEnabled)
         {
-            Debug.LogError("NavMeshAgent is not active.");
+            Debug.LogError("NavMeshAgent is not active.: " + gameObject.name);
             return;
         }
 
@@ -37,7 +37,7 @@ public class RandomRoam : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Agent is not placed on a NavMesh.");
+            Debug.LogError("Agent is not placed on a NavMesh.: " + gameObject.name);
             return;
         }
 
