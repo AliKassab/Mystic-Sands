@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80172e7093d66a24a9c280683dbfd615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedText: 
+  fixedText: "\u0627\u0644\u0631\u0633\u0648\u0645\u0627\u062A"
   ShowTashkeel: 1
   UseHinduNumbers: 0
 --- !u!108 &705507994 stripped
@@ -249,7 +249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80172e7093d66a24a9c280683dbfd615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedText: 
+  fixedText: "\u0627\u0643\u0634\u0641 \u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u0634\u062E\u0635\u064A\u0627\u062A
+    \u0648\u0633\u0627\u0639\u062F\u0647\u0645 \u0641\u064A \u0627\u0644\u062D\u0635\u0648\u0644
+    \u0639\u0644\u0649 \u0623\u062F\u0644\u0629 \u062D\u0648\u0644 \u0643\u064A\u0641\u064A\u0629
+    \u0627\u0644\u0647\u0631\u0648\u0628 \u0645\u0646 \u0627\u0644\u0645\u062A\u0627\u0647\u0629."
   ShowTashkeel: 1
   UseHinduNumbers: 0
 --- !u!1 &963194225
@@ -472,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80172e7093d66a24a9c280683dbfd615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedText: 
+  fixedText: "\u0627\u0644\u062F\u0642\u0647"
   ShowTashkeel: 1
   UseHinduNumbers: 0
 --- !u!114 &1775925580 stripped
@@ -562,6 +565,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 565811852023531075, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 565811852023531075, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 565811852023531075, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314661655324645656, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3906993363139357839, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
       propertyPath: m_text
       value: "\u0627\u0643\u0634\u0641 \u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u0634\u062E\u0635\u064A\u0627\u062A
@@ -585,9 +604,29 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3969425898015950766, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392738546095465940, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392738546095465940, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877047968394621658, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
+      propertyPath: canvases.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5076956099497412085, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
       propertyPath: m_Name
       value: Canvases
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235394690534692467, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
+      propertyPath: canvas.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5700335576231671182, guid: 39e0f5887b4325b428eaa93e3d665d69, type: 3}
       propertyPath: m_LocalPosition.x

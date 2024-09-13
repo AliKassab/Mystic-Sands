@@ -50,9 +50,9 @@ public class UiUtility : MonoBehaviour
         ResolutionDropDown.AddOptions(options);
     }
 
-    public void ToggleCanvas( bool toggleBoolean){
-        canvas[2].SetActive(toggleBoolean);
-    }
+    //public void ToggleCanvas( bool toggleBoolean){
+    //    canvas[2].SetActive(toggleBoolean);
+    //}
     public void ToggleCanvases(object _parameter, bool toggleBoolean){
 
         canvasesToHide = _parameter as List<GameObject>;
