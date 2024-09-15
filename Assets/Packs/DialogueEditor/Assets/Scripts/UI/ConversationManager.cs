@@ -96,8 +96,9 @@ namespace DialogueEditor
             Instance = this;
 
             m_uiOptions = new List<UIConversationButton>();
+            if (NpcIcon != null)
 
-            NpcIcon.sprite = BlankSprite;
+                NpcIcon.sprite = BlankSprite;
             DialogueText.text = "";
             TurnOffUI();
         }
@@ -271,7 +272,9 @@ namespace DialogueEditor
                     break;
                 case eState.TransitioningDialogueBoxOn:
                     SetColorAlpha(DialogueBackground, 1);
-                    SetColorAlpha(NpcIcon, 1);
+                    if (NpcIcon != null)
+
+                        SetColorAlpha(NpcIcon, 1);
                     SetColorAlpha(NameText, 1);
                     break;
             }
@@ -334,7 +337,9 @@ namespace DialogueEditor
             SetColorAlpha(DialogueBackground, t);
    
             SetColorAlpha(NameText, t);
-            SetColorAlpha(NpcIcon, t);
+            if (NpcIcon != null)
+
+                SetColorAlpha(NpcIcon, t);
         }
 
         private void ScrollingText_Update()
@@ -472,11 +477,15 @@ namespace DialogueEditor
             // Set sprite
             if (speech.Icon == null)
             {
-                NpcIcon.sprite = BlankSprite;
+                if (NpcIcon != null)
+
+                    NpcIcon.sprite = BlankSprite;
             }
             else
             {
-                NpcIcon.sprite = speech.Icon;
+                if (NpcIcon != null)
+
+                    NpcIcon.sprite = speech.Icon;
             }
             // Set text
             if (string.IsNullOrEmpty(speech.Text))
@@ -624,7 +633,7 @@ namespace DialogueEditor
                 else
                     DialogueBackground.type = Image.Type.Simple;
             }
-
+            if (NpcIcon != null) 
             NpcIcon.sprite = BlankSprite;
         }
 
