@@ -3,37 +3,31 @@ using UnityEngine.AI;
 
 public class RandomRoam : MonoBehaviour
 {
-    public Transform[] waypoints;            // Array of waypoints for patrol
-    public float roamRadius = 10f;           // Radius within which the agent will roam
-    public float roamDelay = 5f;             // Time delay between each roam
-    public float waypointTolerance = 1f;     // Distance to consider reaching a waypoint
+    public Transform[] waypoints;           // Array of waypoints for patrol
+    public float roamRadius = 10f;          // Radius within which the agent will roam
+    public float roamDelay = 5f;            // Time delay between each roam
+    public float waypointTolerance = 1f;    // Distance to consider reaching a waypoint
 
     private NavMeshAgent agent;
-    private Vector3 startPosition;           // Starting position of the agent
+    private Vector3 startPosition;
     private int currentWaypointIndex = 0;
+    private float roamTimer = 0f;           // Timer for roaming logic
+    private float nextRoamTime;             // Randomized next roam delay
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
-        if (agent == null)
+        if (agent == null || !agent.isActiveAndEnabled)
         {
-            Debug.LogError("NavMeshAgent component is missing.: " + gameObject.name);
-            return;
-        }
-
-        if (!agent.isActiveAndEnabled)
-        {
-            Debug.LogError("NavMeshAgent is not active.: " + gameObject.name);
+            Debug.LogError("NavMeshAgent component is missing or inactive.: " + gameObject.name);
             return;
         }
 
         startPosition = transform.position;
 
-        // Ensure the agent is on a NavMesh surface
         if (NavMesh.SamplePosition(startPosition, out NavMeshHit hit, 1.0f, NavMesh.AllAreas))
         {
-            transform.position = hit.position; // Snap agent to nearest point on NavMesh
+            transform.position = hit.position;
         }
         else
         {
@@ -41,41 +35,55 @@ public class RandomRoam : MonoBehaviour
             return;
         }
 
-        agent.avoidancePriority = 50; // Default value, adjust as needed
+        agent.avoidancePriority = 50;
+        nextRoamTime = roamDelay + Random.Range(0f, 1f); // Randomize roam delay to distribute workload
 
         if (waypoints.Length > 0)
         {
-            // Start patrolling between waypoints
             SetDestinationToWaypoint();
-            InvokeRepeating(nameof(SetNextWaypoint), roamDelay, roamDelay);
         }
         else
         {
-            // Set the initial random destination
             SetRandomDestination();
-            InvokeRepeating(nameof(SetRandomDestination), roamDelay, roamDelay);
+        }
+    }
+
+    void Update()
+    {
+        roamTimer += Time.deltaTime;
+
+        if (roamTimer >= nextRoamTime)
+        {
+            // Update the agent destination based on its current behavior
+            if (waypoints.Length > 0)
+            {
+                SetNextWaypoint();
+            }
+            else
+            {
+                SetRandomDestination();
+            }
+
+            roamTimer = 0f;
+            nextRoamTime = roamDelay + Random.Range(0f, 1f); // Re-randomize delay for the next update
         }
     }
 
     void SetRandomDestination()
     {
-        // Get a random point within the specified radius
         Vector3 randomPoint = startPosition + Random.insideUnitSphere * roamRadius;
-        randomPoint.y = startPosition.y; // Keep the Y coordinate consistent
+        randomPoint.y = startPosition.y;
 
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, roamRadius, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(randomPoint, out NavMeshHit hit, roamRadius, NavMesh.AllAreas))
         {
-            agent.SetDestination(hit.position); // Set the agent's destination
+            agent.SetDestination(hit.position);
         }
     }
 
     void SetNextWaypoint()
     {
-        // Check if the agent has reached the current waypoint
         if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < waypointTolerance)
         {
-            // Move to the next waypoint
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         }
         SetDestinationToWaypoint();
@@ -85,7 +93,7 @@ public class RandomRoam : MonoBehaviour
     {
         if (waypoints.Length > 0)
         {
-            agent.SetDestination(waypoints[currentWaypointIndex].position); // Set the agent's destination to the current waypoint
+            agent.SetDestination(waypoints[currentWaypointIndex].position);
         }
     }
 }
