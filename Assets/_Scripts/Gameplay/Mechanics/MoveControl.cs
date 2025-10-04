@@ -30,7 +30,7 @@ public class MoveControl : MonoBehaviour
     {
         MyInput();
         speedControl();
-        rgd.drag = drag;
+        rgd.linearDamping = drag;
 
         RotatePlayer(); // Rotate player based on movement
     }
@@ -70,12 +70,12 @@ public class MoveControl : MonoBehaviour
 
     void speedControl()
     {
-        Vector3 flatVel = new Vector3(rgd.velocity.x, 0, rgd.velocity.z);
+        Vector3 flatVel = new Vector3(rgd.linearVelocity.x, 0, rgd.linearVelocity.z);
 
         if (flatVel.magnitude > moveSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
-            rgd.velocity = new Vector3(limitedVel.x, rgd.velocity.y, limitedVel.z);
+            rgd.linearVelocity = new Vector3(limitedVel.x, rgd.linearVelocity.y, limitedVel.z);
         }
     }
 }
