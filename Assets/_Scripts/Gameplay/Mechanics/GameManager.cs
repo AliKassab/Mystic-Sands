@@ -15,9 +15,6 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI TimerText;
     [SerializeField]
     private TextMeshProUGUI EndGameText;
-
-    private GameObject startTimertrigger;
-    private GameObject endGametrigger;
     private GameObject player;
 
     private int roundCounter = 0;
@@ -59,18 +56,11 @@ public class GameManager : MonoBehaviour
 
     private void StartMaze()
     {
-        AssignTriggers();
         AttachInstanceToPlayer();
         roundCounter++;
         InitializeMaze();
         timer = timerOriginalValue;
         TimerText.text = "Time Left: " + timer.ToString("F0");
-    }
-
-    private void AssignTriggers()
-    {
-        startTimertrigger = _mazeRenderer.startTimerTrigger;
-        endGametrigger = _mazeRenderer.endGameTrigger;
     }
 
     private void AttachInstanceToPlayer()
