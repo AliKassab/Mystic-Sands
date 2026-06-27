@@ -49,13 +49,3 @@ Assets/_Scripts/
 ```
 
 ---
----
-
-## Gameplay
-
-
-- Explore the open desert world and interact with characters.
-- Solve puzzles and manage items through drag‑and‑drop placement.
-- Enter the maze and escape before the timer runs out — each round gets tighter.
-
----
