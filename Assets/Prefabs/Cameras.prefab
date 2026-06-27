@@ -300,8 +300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc7b115339de564db5f46340b89514b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 400
-  sensY: 400
+  sensX: 7
+  sensY: 7
   clampAngleY: 75
   orientation: {fileID: 0}
 --- !u!114 &1507159893324167926

@@ -32,8 +32,8 @@ public class CamControl : MonoBehaviour
 
        //if (Input.GetKey(KeyCode.Mouse0))
         {
-            float mouseX = Input.GetAxisRaw("Mouse X") * sensX * Time.deltaTime;
-            float mouseY = Input.GetAxisRaw("Mouse Y") * sensX * Time.deltaTime;
+            float mouseX = Input.GetAxisRaw("Mouse X") * sensX;
+            float mouseY = Input.GetAxisRaw("Mouse Y") * sensY;
 
             rotationY += mouseX;
             rotationX -= mouseY;

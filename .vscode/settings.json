@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Mystic-Sands.sln"
+    "dotnet.defaultSolution": "Mystic-Sands.slnx"
 }

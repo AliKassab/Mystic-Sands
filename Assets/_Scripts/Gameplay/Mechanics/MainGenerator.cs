@@ -127,6 +127,7 @@ public class MazeGenerator
         }
     public static WallState[,] Generate(int width, int height)
     {
+        solutionPath.Clear(); // reset; was accumulating across every rebuild
         WallState[,] maze = new WallState[width, height];
         WallState initial = WallState.RIGHT | WallState.LEFT | WallState.UP | WallState.DOWN;
         for (int i = 0; i < width; ++i)

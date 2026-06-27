@@ -31,13 +31,12 @@ public class MoveControl : MonoBehaviour
         MyInput();
         speedControl();
         rgd.linearDamping = drag;
-
-        RotatePlayer(); // Rotate player based on movement
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
+        RotatePlayer(); // Rotate player based on movement
     }
 
     void MyInput()
@@ -62,9 +61,10 @@ public class MoveControl : MonoBehaviour
     {
         if (moveDirection.magnitude > 0)
         {
-            // Rotate the player towards the move direction smoothly
+            // Rotate the player towards the move direction smoothly via the Rigidbody
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection.normalized);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            Quaternion newRotation = Quaternion.Slerp(rgd.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+            rgd.MoveRotation(newRotation);
         }
     }
 
