@@ -9,6 +9,11 @@ public class DialogueTriggerer : MonoBehaviour
     private NPCConversation conversation;
     private MoveControl playerMovement;
     public Flagger flagger;
+
+    // Shared across all triggerers so the scene is scanned once total, not once per instance.
+    private static MoveControl _cachedPlayerMovement;
+    private static Flagger _cachedFlagger;
+
     private void OnTriggerEnter(Collider other)
     {
         playerMovement.enabled = false;
@@ -27,10 +32,18 @@ public class DialogueTriggerer : MonoBehaviour
 
     private void Start()
     {
-        playerMovement = FindObjectOfType<MoveControl>().GetComponent<MoveControl>();
+        // Unity's fake-null makes a destroyed cached object compare == null, so this
+        // re-scans automatically on a fresh scene load but reuses the result otherwise.
+        if (_cachedPlayerMovement == null)
+            _cachedPlayerMovement = FindAnyObjectByType<MoveControl>();
+        playerMovement = _cachedPlayerMovement;
+
         if (SceneManager.GetActiveScene().buildIndex == 2) return;
         conversation = GetComponentInParent<NPCConversation>();
-        flagger = FindObjectOfType<Flagger>().GetComponent<Flagger>();
+
+        if (_cachedFlagger == null)
+            _cachedFlagger = FindAnyObjectByType<Flagger>();
+        flagger = _cachedFlagger;
     }
 
     public void TriggerNextDialogue(GameObject DialogueTrigger)

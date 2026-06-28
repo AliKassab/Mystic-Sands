@@ -7,6 +7,6 @@ public class SceneTransition : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadSceneAsync(2);
+        SceneLoader.Load(2);
     }
 }

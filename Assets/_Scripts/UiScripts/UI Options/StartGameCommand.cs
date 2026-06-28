@@ -10,7 +10,7 @@ public class StartGameCommand : MonoBehaviour, ICommand
     public void Execute(object _parameter)
     {
         settingsUtility = new UiUtility();
-        SceneManager.LoadSceneAsync(1);
+        SceneLoader.Load(1);
     }
     
 }
