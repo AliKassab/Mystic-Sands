@@ -202,7 +202,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: f5feae4386688de4d8d775dabddb3a6f, type: 2}
-  m_audioClip: {fileID: 8300000, guid: fdf59fe2a9e9697478454d23b2112181, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: fdf59fe2a9e9697478454d23b2112181, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.401
   m_Pitch: 1
@@ -300,8 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc7b115339de564db5f46340b89514b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 7
-  sensY: 7
+  sensX: 4
+  sensY: 4
   clampAngleY: 75
   orientation: {fileID: 0}
 --- !u!114 &1507159893324167926

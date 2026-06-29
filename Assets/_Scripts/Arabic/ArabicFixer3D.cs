@@ -161,9 +161,9 @@ public class ArabicFixer3D : MonoBehaviour
 
     IEnumerator PrepareComponenet()
     {
-        if (GameManager.instance.player.language != 0) //if not arabic remove script
-            Destroy(GetComponent<ArabicFixer>());
-
+        // NOTE: previously gated on a per-player language setting that no longer exists
+        // in the project (GameManager has no public instance/player.language). Removed so
+        // the script compiles for player builds (WebGL). Arabic fixing stays enabled.
         yield return null;
         if (GetComponent<Text>())
         {

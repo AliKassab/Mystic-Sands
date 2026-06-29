@@ -29,8 +29,6 @@ public class MoveControl : MonoBehaviour
     void Update()
     {
         MyInput();
-        speedControl();
-        rgd.linearDamping = drag;
     }
 
     private void FixedUpdate()
@@ -47,14 +45,14 @@ public class MoveControl : MonoBehaviour
 
     void MovePlayer()
     {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        moveDirection = (orientation.forward * verticalInput + orientation.right * horizontalInput).normalized;
 
-        rgd.AddForce(moveDirection.normalized * moveSpeed, ForceMode.Force);
+        // Drive horizontal velocity directly so the player stops the instant input
+        // is released (no coasting), while leaving vertical velocity to gravity.
+        Vector3 targetVelocity = moveDirection * moveSpeed;
+        rgd.linearVelocity = new Vector3(targetVelocity.x, rgd.linearVelocity.y, targetVelocity.z);
 
-        if (moveDirection.magnitude > 0)
-            animator.SetBool("Walking", true);
-        else
-            animator.SetBool("Walking", false);
+        animator.SetBool("Walking", moveDirection.sqrMagnitude > 0f);
     }
 
     void RotatePlayer()
@@ -68,14 +66,4 @@ public class MoveControl : MonoBehaviour
         }
     }
 
-    void speedControl()
-    {
-        Vector3 flatVel = new Vector3(rgd.linearVelocity.x, 0, rgd.linearVelocity.z);
-
-        if (flatVel.magnitude > moveSpeed)
-        {
-            Vector3 limitedVel = flatVel.normalized * moveSpeed;
-            rgd.linearVelocity = new Vector3(limitedVel.x, rgd.linearVelocity.y, limitedVel.z);
-        }
-    }
 }

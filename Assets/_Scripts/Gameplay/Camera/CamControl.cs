@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
 
@@ -29,6 +28,10 @@ public class CamControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Mouse look no longer scales by Time.deltaTime (frame-rate independent), so it
+        // would keep rotating while the game is paused. Freeze it when time is stopped.
+        if (Time.timeScale == 0f)
+            return;
 
        //if (Input.GetKey(KeyCode.Mouse0))
         {

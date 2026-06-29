@@ -447,6 +447,21 @@ namespace DialogueEditor
         // Do Speech
         //--------------------------------------
 
+        // Routes dialogue text through the Arabic shaper when present, otherwise falls
+        // back to plain TMP text. Without this guard a DialogueText missing the
+        // ArabicFixerTMPROO component threw every frame and stalled the conversation.
+        private void SetDialogueText(string text)
+        {
+            if (DialogueText == null)
+                return;
+
+            var arabicFixer = DialogueText.GetComponent<ArabicFixerTMPROO>();
+            if (arabicFixer != null)
+                arabicFixer.fixedText = text;
+            else
+                DialogueText.text = text;
+        }
+
         private void SetupSpeech(SpeechNode speech)
         {
             if (speech == null)
@@ -508,7 +523,7 @@ namespace DialogueEditor
             {
                 if (ScrollText)
                 {
-                    DialogueText.GetComponent<ArabicFixerTMPROO>().fixedText = speech.Text;
+                    SetDialogueText(speech.Text);
                     m_targetScrollTextCount = speech.Text.Length + 1;
                     DialogueText.maxVisibleCharacters = 0;
                     m_elapsedScrollTime = 0f;
@@ -516,14 +531,26 @@ namespace DialogueEditor
                 }
                 else
                 {
-                    DialogueText.GetComponent<ArabicFixerTMPROO>().fixedText = speech.Text;
+                    SetDialogueText(speech.Text);
                     DialogueText.maxVisibleCharacters = speech.Text.Length;
                 }
             }
 
-            // Call the event
+            // Call the event. A single misconfigured persistent listener (e.g. a node
+            // whose argument references a stale/non-GameObject object) used to throw here
+            // and abort the whole conversation; isolate it so dialogue keeps flowing.
             if (speech.Event != null)
-                speech.Event.Invoke();
+            {
+                try
+                {
+                    speech.Event.Invoke();
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogError("Dialogue node event failed to invoke (check its OnSpeech " +
+                        "listeners for a broken/empty object argument): " + e.Message, this);
+                }
+            }
 
             DoParamAction(speech);
 
