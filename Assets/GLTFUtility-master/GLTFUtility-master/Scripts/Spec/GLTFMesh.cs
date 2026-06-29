@@ -66,6 +66,9 @@ namespace Siccity.GLTFUtility {
 						for (int i = 0; i < gltfMesh.primitives.Count; i++) {
 							GLTFPrimitive primitive = gltfMesh.primitives[i];
 							// Load draco mesh
+							// Draco native decoder has no WebGL plugin; skip it in WebGL player
+							// builds (meshes are decoded at import time, not at runtime).
+#if !UNITY_WEBGL || UNITY_EDITOR
 							if (primitive.extensions != null && primitive.extensions.KHR_draco_mesh_compression != null) {
 								GLTFPrimitive.DracoMeshCompression draco = primitive.extensions.KHR_draco_mesh_compression;
 								GLTFBufferView.ImportResult bufferView = bufferViews[draco.bufferView];
@@ -128,7 +131,9 @@ namespace Siccity.GLTFUtility {
 								}
 							}
 							// Load normal mesh
-							else {
+							else
+#endif
+							{
 								int vertStartIndex = verts.Count;
 								submeshVertexStart.Add(vertStartIndex);
 
